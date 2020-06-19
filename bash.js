@@ -1,25 +1,17 @@
-// process.stdout.write('prompt>');
-// process.stdin.on('data',(data)=>{
-//     const cmd = data.toString().trim();
-//     process.stdout.write('You typed:' + cmd);
-//     process.stdout.write('\nprompmt>');
-// })
+// //Outputs a prompt in the terminal
+// process.stdout.write('prompt > ');
+// //the stdin 'data' event fires(on) after a user types in a line
+// process.stdin.on('data', (data) => {
+//   const entry = data.toString().trim();//removes a line
+//   const location = process.cwd();  //prints out the full path to the current working directory
+// //if the user types 'pwd' command
+//   if(entry === 'pwd') { 
+//       //output a path
+//     process.stdout.write(location);
+//     process.stdout.write('\nprompt > ');
+//   }
+// });
 
-// process.stdout.write('prompt>');
-// process.stdin.cwd('data',(data)=>{
-//     let cwd = process.cwd();
-//     console.log('this is  data',data);
-//     console.log('this is  cwd',cwd);
-//     if(data.toString().trim() === 'pwd'){
-//         process.stdout.write(cwd);
-//     }
-//     process.stdout.write('\nprompt>');
-// })
-process.cwd("data", (data) => {
-  const cmd = data.toString().trim();
-  let pwd = process.cwd().toString();
-  
-  process.stdout.write("You typed:" + cmd);
 
-  process.stdout.write("\nprompt>");
-});
+let pwd= require('./pwd');
+pwd()
